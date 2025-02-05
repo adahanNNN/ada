@@ -60,18 +60,41 @@
     </style>
   </head>
   <body>
-    <audio autoplay>
-  <source src="https://raw.githubusercontent.com/adahanNNN/ada/refs/heads/main/darbe.MP3" type="audio/mp3">
-</audio>
+    <!-- Şarkıyı Otomatik Oynat -->
+    <audio id="audioPlayer" autoplay>
+      <source src="https://raw.githubusercontent.com/adahanNNN/ada/refs/heads/main/darbe.MP3" type="audio/mp3">
+    </audio>
+
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
       <h1 style="color: #f44336; animation: rainbow 1s ease-in-out infinite;">Şanlı STARK bayrağına basınca youtube kanalıma yönlendirir.</h1>
       <h1 style="color: #e91e63; animation: rainbow 1s ease-in-out infinite; animation-delay: 0.2s;"> [adahanN] Targaryen hanedanı bayrağına basınca discord adresime. [adahanN]</h1>
     </div>
+
     <a href="https://www.youtube.com/@pNhanN">
       <img id="logo1" src="https://i.hizliresim.com/rzuyq3h.png?_gl=1*xvont0*_ga*MTY2NTg1MTgwNi4xNzIxMDA1OTI0*_ga_M9ZRXYS2YN*MTczODcxMDk2NC4xMzEuMS4xNzM4NzE2ODA5LjYwLjAuMA.." alt="Beşiktaş Logo" />
     </a>
     <a href="https://discord.com/users/550013774036336651">
       <img id="logo2" src="https://i.hizliresim.com/138zf33.png?_gl=1*z3nq8l*_ga*MTY2NTg1MTgwNi4xNzIxMDA1OTI0*_ga_M9ZRXYS2YN*MTczODcxMDk2NC4xMzEuMS4xNzM4NzE2NzY0LjQ0LjAuMA.." alt="Barcelona Logo" />
     </a>
+
+    <!-- Oynat/Duraklat Butonu -->
+    <button id="playPauseBtn" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); padding: 10px 20px; background-color: #2196f3; color: white; border: none; cursor: pointer;">
+      Oynat
+    </button>
+
+    <script>
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const audioPlayer = document.getElementById('audioPlayer');
+
+      playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playPauseBtn.textContent = 'Duraklat';
+        } else {
+          audioPlayer.pause();
+          playPauseBtn.textContent = 'Oynat';
+        }
+      });
+    </script>
   </body>
 </html>
